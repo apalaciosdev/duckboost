@@ -95,13 +95,14 @@ sudo service apache2 restart
 ## Install WordPress on Linux
 Before install Wordpress, we have to create the database.
 ```shell
-sudo phpenmod mbstring
+sudo mysql
 
-sudo service apache2 restart
+mysql> CREATE DATABASE wordpress-database;
+
+mysql> exit
 ```
+Now, we can start.
 <br/>
-
-
 
 
 First, we need to download Wordpress.
@@ -148,13 +149,13 @@ sudo nano wp-config.php
 Add or replace the next lines:
 ```shell
 ** The name of the database for WordPress */
-define( 'DB_NAME', '[name of the database that we created before]' );
+define( 'DB_NAME', 'name of the database that we created before(wordpress-database)' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', '[password configurated before in the MySQL installation]' );
+define( 'DB_PASSWORD', 'password configurated before in the MySQL installation' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -190,15 +191,7 @@ define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
 define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
 define( 'NONCE_SALT',       'put your unique phrase here' );
 
-//and paste the clipboard (don't paste this example):
-define('AUTH_KEY',         'Jp4;]xWJFKod+gkzLP.ZbMOSJDzk7 |D:I-P;^RmW/ovF1^NNy3!/+:VG}8/$');
-define('SECURE_AUTH_KEY',  'P$fblIo8L+`|Rp3:kT9`06mV|+4Y&$x/I)#/?fH%}XZE8NhcFphk^}ILnOT`');
-define('LOGGED_IN_KEY',    'XtI-*.bH*6ydQ=6]5?/Zf-~jh;GV%0FV0 ;hL+l9cUseR~sf &5)&0T{;VF+');
-define('NONCE_KEY',        'q!# /iy>^]/ 3[D;*-AEJ)RwqvJzy(;mD;@0md|ddB$bG-xPJf#O$nGX-PMyH');
-define('AUTH_SALT',        '4|MpXXt})M2NrxczA^He=|tXy5s[g1=c7.`ru9{PkMr~u>Fbu4!3dC+HCi|/G');
-define('SECURE_AUTH_SALT', 'o74&x-dN:<d`+|*+:+#D&3^+-P%Elsp.j}Fi-Wz:MA[BP.]*QU#@-V9CFg3H');
-define('LOGGED_IN_SALT',   'Q,a-pOVvq{}of^<z <_=ft(-a*Y|.&Xt(u<U_+pvK!*<Zhyx3(6_|]sR[>,%-');
-define('NONCE_SALT',       '5B`Q7L|CnK~[[^|3E9U5fr&*~-L@fVs I2.FR~@&5<)EOUCe)-+R|j7Y7Er');
+//and paste the content of your clipboard.
 ```
 <br/>
 
