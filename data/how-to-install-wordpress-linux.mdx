@@ -1,0 +1,157 @@
+---
+title: 'How to install Wordpress on Linux'
+date: '2022-02-05'
+languaje: 'wordpress'
+---
+
+# How to install Wordpress on Linux
+
+Hi, this is the first post of this blog.
+
+To write a new post, create a new .mdx file in the /data directory.
+
+Things we are going to do:
+  - Install Apache
+  - Install MySQL
+  - Install PHP
+  - Install PHPMyAdmin
+  - Install Wordpress
+  - Configure Wordpress
+
+
+## Install Apache
+First we need to install Apache.
+```shell
+sudo apt update
+sudo apt install apache2
+```
+<br/>
+
+Allow http and https traffic from apache.
+```shell
+sudo ufw allow in "Apache Full"
+```
+<br/>
+
+
+## Install MySQL
+Let's install MySQL.
+```shell
+sudo apt install mysql-server
+```
+<br/>
+
+Once the installation is finished we enter in SQL for configure the 'root' user.
+```shell
+sudo mysql
+```
+<br/>
+
+Configure the 'root' user and save the changes.
+```sql
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Password';
+
+mysql> FLUSH PRIVILEGES;
+
+mysql> exit
+```
+<br/>
+
+
+## Install PHP
+To display dynamic content, you will need PHP.
+```shell
+sudo apt install php libapache2-mod-php php-mysql
+
+sudo apt install php-curl php-gd php-xml php-mbstring  php-xmlrpc php-zip php-soap php-intl
+```
+<br/>
+
+
+## Install PHPMyAdmin
+Now we are going to install PHPMyAdmin (this is optional, but it is recommended to install it).
+```shell
+sudo apt install phpmyadmin php-mbstring
+```
+<br/>
+
+During the installation of PHPMyAdmin will appear a window that task us if we are using 'Apache2' or 'Lighttpd'. Select 'Apache2' and continue.
+
+After this, you will be prompted to use dbconfig-common, select YES.
+
+Introduce your root password configurated before in the MySQL installation.
+<br/>
+
+Lastly, enable the mbstring extension and restart Apache.
+Now we are going to install PHPMyAdmin (this is optional, but it is recommended to install it).
+```shell
+sudo phpenmod mbstring
+
+sudo service apache2 restart
+```
+<br/>
+
+
+
+
+
+
+
+Write your blog posts in [MDX]. With MDX, you can use components directly in markdown.
+
+In this example, im going to add a Spotify Podcast Frame <br/>(this component is in the folder '/components'): <br/><br/>
+
+Component:
+```jsx
+const SIZES = {
+  normal: "232",
+  compact: "152",
+};
+
+export const Podcast = ({ episode, size }) => {
+  return (
+    <iframe
+      src={`https://open.spotify.com/embed/episode/${episode}`}
+      width="100%"
+      height={SIZES[size]}
+      frameBorder="0"
+      allowtransparency="true"
+      allow="encrypted-media"
+    ></iframe>
+  );
+}
+```
+<br/>
+
+
+Line added in the MDX file:
+```jsx
+<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
+```
+<br/>
+
+Result:
+<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
+
+
+
+## Add Syntax highlighting
+
+Syntax highlighting with [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer).
+
+You can add a Sintax highlight code in your articles.
+
+For do this, add the next lines in your MDX file (remove /* */):
+```jsx
+/*
+```jsx
+<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
+```  */
+```
+<br/>
+
+
+
+
+
+

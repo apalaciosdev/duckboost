@@ -29,9 +29,9 @@
   margin-left: 10px;
 }
 
-.Logo > img {
-  width: 30px;
-  height: 10px;
+.logoImg {
+  width: 300px;
+  height: 300px;
 }
 
 .Nav {

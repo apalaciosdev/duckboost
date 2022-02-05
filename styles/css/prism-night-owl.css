@@ -11,7 +11,7 @@
  
    white-space: pre-wrap;
   word-break: break-all;
- 
+  
    
    line-height: 1.5;
    font-size: 1em;
@@ -30,7 +30,6 @@
    hyphens: none;
  }
 
- 
  
  pre[class*="language-"]::-moz-selection,
  pre[class*="language-"] ::-moz-selection,
