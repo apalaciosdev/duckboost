@@ -1,0 +1,82 @@
+---
+title: 'nextjs-mdx-blog-starter'
+date: '2021-12-27'
+languaje: 'js'
+---
+
+# Nextjs mdx blog starter
+
+Hi, this is the first post of this blog.
+
+To write a new post, create a new .mdx file in the /data directory.
+
+If you would like to add more data to your posts, such as author information or other meta data, add more fields to 
+the front matter in your mdx files and add the field names to the getStaticProps function ubicated in 'articles.js' page.
+
+Add more icons in the /public/images/icons directory to show in the Post List Item component.
+
+Make it your own by adjusting the blog config file. 
+Customize whatever you want.
+
+
+## Add reutilizable components
+
+
+Write your blog posts in [MDX]. With MDX, you can use components directly in markdown.
+
+In this example, im going to add a Spotify Podcast Frame <br/>(this component is in the folder '/components'): <br/><br/>
+
+Component:
+```jsx
+const SIZES = {
+  normal: "232",
+  compact: "152",
+};
+
+export const Podcast = ({ episode, size }) => {
+  return (
+    <iframe
+      src={`https://open.spotify.com/embed/episode/${episode}`}
+      width="100%"
+      height={SIZES[size]}
+      frameBorder="0"
+      allowtransparency="true"
+      allow="encrypted-media"
+    ></iframe>
+  );
+}
+```
+<br/>
+
+
+Line added in the MDX file:
+```jsx
+<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
+```
+<br/>
+
+Result:
+<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
+
+
+
+## Add Syntax highlighting
+
+Syntax highlighting with [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer).
+
+You can add a Sintax highlight code in your articles.
+
+For do this, add the next lines in your MDX file (remove /* */):
+```jsx
+/*
+```jsx
+<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
+```  */
+```
+<br/>
+
+
+
+
+
+

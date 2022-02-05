@@ -1,0 +1,22 @@
+.StyledImage{
+  border-radius: 10px;
+  flex-grow:0;
+  flex-shrink:0;
+  width: 2%;
+}
+
+.StyledH3{
+  width: 98%;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.StyledDiv{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 99%;
+  
+}
