@@ -92,63 +92,128 @@ sudo service apache2 restart
 <br/>
 
 
+## Install WordPress on Linux
+Before install Wordpress, we have to create the database.
+```shell
+sudo phpenmod mbstring
 
-
-
-
-
-Write your blog posts in [MDX]. With MDX, you can use components directly in markdown.
-
-In this example, im going to add a Spotify Podcast Frame <br/>(this component is in the folder '/components'): <br/><br/>
-
-Component:
-```jsx
-const SIZES = {
-  normal: "232",
-  compact: "152",
-};
-
-export const Podcast = ({ episode, size }) => {
-  return (
-    <iframe
-      src={`https://open.spotify.com/embed/episode/${episode}`}
-      width="100%"
-      height={SIZES[size]}
-      frameBorder="0"
-      allowtransparency="true"
-      allow="encrypted-media"
-    ></iframe>
-  );
-}
+sudo service apache2 restart
 ```
 <br/>
 
 
-Line added in the MDX file:
-```jsx
-<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
+
+
+First, we need to download Wordpress.
+
+Go to Desktop or whatever directory you want and download Wordpress.
+```shell
+cd /Desktop 
+
+curl -O https://wordpress.org/latest.tar.gz
+```
+If you want, download Wordpress manually: https://wordpress.org/latest.tar.gz
+<br/>
+
+
+Extract the file using this command and move the file extracted to the next path:
+```shell
+tar xzvf latest.tar.gz
+
+sudo mv /wordpress /var/www/html/wordpress
+
+sudo chmod 755 /var/www/html/wordpress
 ```
 <br/>
 
-Result:
-<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
 
+Change the name of the Wordpress Config file:
+```shell
+cd /var/www/html/wordpress
 
+sudo mv wp-config-sample.php wp-config.php
 
-## Add Syntax highlighting
-
-Syntax highlighting with [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer).
-
-You can add a Sintax highlight code in your articles.
-
-For do this, add the next lines in your MDX file (remove /* */):
-```jsx
-/*
-```jsx
-<Podcast episode="2Nke3gndQfRHI1835BKlpL?utm_source=generator" size="compact"/>
-```  */
+sudo chmod 755 /var/www/html/wordpress
 ```
 <br/>
+
+
+Open the file with an editor:
+```shell
+sudo nano wp-config.php
+```
+<br/>
+
+
+Add or replace the next lines:
+```shell
+** The name of the database for WordPress */
+define( 'DB_NAME', '[name of the database that we created before]' );
+
+/** Database username */
+define( 'DB_USER', 'root' );
+
+/** Database password */
+define( 'DB_PASSWORD', '[password configurated before in the MySQL installation]' );
+
+/** Database hostname */
+define( 'DB_HOST', 'localhost' );
+
+/** Database charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
+
+/** The database collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+
+```
+<br/>
+
+
+Next execute this command and copy the result:
+```shell
+curl -s https://api.wordpress.org/secret-key/1.1/salt/
+```
+<br/>
+
+
+Paste it inside the config file (replace before the existing lines):
+```shell
+sudo nano wp-config.php
+
+//drop these lines:
+define( 'AUTH_KEY',         'put your unique phrase here' );
+define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+define( 'NONCE_KEY',        'put your unique phrase here' );
+define( 'AUTH_SALT',        'put your unique phrase here' );
+define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
+define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+define( 'NONCE_SALT',       'put your unique phrase here' );
+
+//and paste the clipboard (don't paste this example):
+define('AUTH_KEY',         'Jp4;]xWJFKod+gkzLP.ZbMOSJDzk7 |D:I-P;^RmW/ovF1^NNy3!/+:VG}8/$');
+define('SECURE_AUTH_KEY',  'P$fblIo8L+`|Rp3:kT9`06mV|+4Y&$x/I)#/?fH%}XZE8NhcFphk^}ILnOT`');
+define('LOGGED_IN_KEY',    'XtI-*.bH*6ydQ=6]5?/Zf-~jh;GV%0FV0 ;hL+l9cUseR~sf &5)&0T{;VF+');
+define('NONCE_KEY',        'q!# /iy>^]/ 3[D;*-AEJ)RwqvJzy(;mD;@0md|ddB$bG-xPJf#O$nGX-PMyH');
+define('AUTH_SALT',        '4|MpXXt})M2NrxczA^He=|tXy5s[g1=c7.`ru9{PkMr~u>Fbu4!3dC+HCi|/G');
+define('SECURE_AUTH_SALT', 'o74&x-dN:<d`+|*+:+#D&3^+-P%Elsp.j}Fi-Wz:MA[BP.]*QU#@-V9CFg3H');
+define('LOGGED_IN_SALT',   'Q,a-pOVvq{}of^<z <_=ft(-a*Y|.&Xt(u<U_+pvK!*<Zhyx3(6_|]sR[>,%-');
+define('NONCE_SALT',       '5B`Q7L|CnK~[[^|3E9U5fr&*~-L@fVs I2.FR~@&5<)EOUCe)-+R|j7Y7Er');
+```
+<br/>
+
+
+Save changes and restart Apache
+```shell
+sudo service apache2 reload
+```
+<br/>
+
+
+check that it works by going to the following link in the browsercheck that it works by going to the following link in the browser: *localhost/wordpress*
+
+
+
 
 
 
