@@ -34,8 +34,11 @@ export const Header = ({theme, toggleTheme}) => {
 
   return (
     <header className="Header">
+      <div className="Logo">
+      <Image src={`/images/logo/logo.png`} className="logoImg" alt='Logo' width={40} height={40}/>
+      <p><Link href="/"> DuckBoost </Link></p>
 
-      <p className="Logo"> <Link href="/"> BlogStack </Link></p>
+      </div>
       
       <CSSTransition
         in={!isSmallScreen || isNavVisible}

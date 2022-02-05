@@ -1,4 +1,4 @@
-# Welcome to <a href="https://nextjs-blog-apalacios.netlify.app/post-1">DuckBoost!</a>!
+# Welcome to <a href="https://nextjs-blog-apalacios.netlify.app/post-1">DuckBoost</a>!
 This is a template blog created with NextJS using MDX.
 <br />
 
