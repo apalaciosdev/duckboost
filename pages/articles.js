@@ -1,8 +1,10 @@
 import Link from "next/link"
 import Head from "next/head"
 
+
 import { getAllFilesMetadata } from "../lib/mdx"
 import { PostListItem } from "../components/PostListItem"
+
 
 export default function Articles({ posts }) {
   return (

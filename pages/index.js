@@ -3,6 +3,19 @@ import Image from "next/image"
 import { PostListItem } from "../components/PostListItem"
 import PostsData from "../components/PostsData"
 import { getAllFilesMetadata } from "../lib/mdx"
+import styled from 'styled-components';
+
+
+const SVGDiv = styled.div`
+  display:flex;
+`
+
+const SVGP = styled.p`
+  width: 60%;
+  
+`
+
+
 
 export default function Home({ posts }) {
   return (
@@ -14,12 +27,12 @@ export default function Home({ posts }) {
       </Head>
 
       <h1>Simplifying Web Development</h1>
-      <div>
-        <p>
-          Dedicated to simplifying the web developer experience. DuckBoost is a
-          simple and minimalist collection of projects and articles for
+      <SVGDiv>
+        <SVGP>
+          Dedicated to simplifying the web developer experience. <br /><br />
+          DuckBoost is a simple and minimalist collection of projects and articles for
           developers and students.
-        </p>
+        </SVGP>
         <br />
         <br />
 
@@ -29,7 +42,7 @@ export default function Home({ posts }) {
           width={200}
           height={200}
         />
-      </div>
+      </SVGDiv>
 
       <h1>Lastest Articles</h1>
       <hr />
