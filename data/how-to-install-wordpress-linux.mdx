@@ -14,7 +14,7 @@ Things we are going to do:
   - Install Apache
   - Install MySQL
   - Install PHP
-  - Install PHPMyAdmin
+  - Install PHPMyAdmin (optional)
   - Install Wordpress
   - Configure Wordpress
 
@@ -167,6 +167,7 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
 ```
+![Example](/images/assets/how-to-install-wordpress-linux/wordpress1.png)
 <br/>
 
 
@@ -193,17 +194,18 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
 
 //and paste the content of your clipboard.
 ```
+![Example](/images/assets/how-to-install-wordpress-linux/wordpress2.png)
 <br/>
 
 
-Save changes and restart Apache
+Save changes and restart Apache.
 ```shell
 sudo service apache2 reload
 ```
 <br/>
 
 
-check that it works by going to the following link in the browsercheck that it works by going to the following link in the browser: *localhost/wordpress*
+Check that it works by going to the following link in the browsercheck that it works by going to the following link in the browser: `http://localhost/wordpress`.
 
 
 

@@ -39,7 +39,7 @@ export const Header = ({theme, toggleTheme}) => {
       <p><Link href="/"> DuckBoost </Link></p>
 
       </div>
-      
+
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
         timeout={350}

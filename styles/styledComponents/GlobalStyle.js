@@ -2,7 +2,6 @@ import { createGlobalStyle} from "styled-components"
 
 
 export const GlobalStyle = createGlobalStyle`
-  
   html,
   body {
     padding: 0;
@@ -31,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 20px;
     padding: 16px 20px;
     border-left: 6px solid #137CBD;
+  },
 
-  }
  
 `
