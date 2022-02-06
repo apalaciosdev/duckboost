@@ -1,9 +1,16 @@
-import Head from 'next/head'
 import Link from 'next/link'
-import { getAllFilesMetadata } from '../lib/mdx'
+import Head from 'next/head'
+import styled from 'styled-components';
 
+import { getAllFilesMetadata } from '../lib/mdx'
 import { PostListItem } from '../components/PostListItem'
 
+
+const ListDiv = styled.div`
+  display:grid;
+  width: 100%;
+  justify-content: center;
+`
 
 
 export default function Articles({ posts }) {
@@ -14,19 +21,19 @@ export default function Articles({ posts }) {
         <meta name="description" content="..." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      
-      {posts.map((post) => (
-        <Link href={`/${post.slug}`} key={post.slug}>
-          <a>
-            <PostListItem
-              title={post.title}
-              date={post.date}
-              languaje={post.languaje}
-            />
-          </a>
-        </Link>
-      ))}
+      <ListDiv>
+        {posts.map((post) => (
+          <Link href={`/${post.slug}`} key={post.slug}>
+            <a>
+              <PostListItem
+                title={post.title}
+                date={post.date}
+                languaje={post.languaje}
+              />
+            </a>
+          </Link>
+        ))}
+      </ListDiv>
     </div>
   )
 }

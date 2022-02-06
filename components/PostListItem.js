@@ -11,7 +11,7 @@ const StyledImage = styled(Image)`
   flex-grow:0;
   flex-shrink:0;
   width: 2%;
-  `
+`
 
 const StyledH3 = styled.h3`
   width: 98%;
