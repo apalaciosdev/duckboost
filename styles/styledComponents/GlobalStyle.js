@@ -5,7 +5,8 @@ export const GlobalStyle = createGlobalStyle`
   html,
   body {
     padding: 0;
-    margin: 10px;
+    margin: 0px;
+    margin-bottom: 0px;
     margin-top: 40px;
     font-family: Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -31,6 +32,4 @@ export const GlobalStyle = createGlobalStyle`
     padding: 16px 20px;
     border-left: 6px solid #137CBD;
   },
-
- 
 `

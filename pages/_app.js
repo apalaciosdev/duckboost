@@ -11,6 +11,7 @@ import "../styles/css/prism-night-owl.css";
 import '../styles/css/ToggleButton.css'
 import "../styles/css/Header.css";
 import "../styles/css/PostListItem.css";
+import Footer from '../components/Footer';
 
 
 
@@ -23,15 +24,15 @@ function MyApp({ Component, pageProps }) {
 
   return(
     <ThemeContext.Provider value={{theme, themeToggler}}>
-      
+
       <ThemeProvider theme={themeMode}>
         <GlobalStyle/>
         <Header theme={theme} toggleTheme={themeToggler}/>
         <Component {...pageProps} />
+        <Footer/>
       </ThemeProvider>
 
     </ThemeContext.Provider>
-  
   )
 }
 
