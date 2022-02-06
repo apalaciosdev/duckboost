@@ -35,7 +35,7 @@ export const Header = ({theme, toggleTheme}) => {
   return (
     <header className="Header">
       <div className="Logo">
-      <Image src={`/images/logo/logo.png`} className="logoImg" alt='Logo' width={40} height={40}/>
+      <Image src={`/images/logo/logo.png`} className="logoImg" alt='Logo' width={50} height={5}/>
       <p><Link href="/"> DuckBoost </Link></p>
 
       </div>
