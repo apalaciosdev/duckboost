@@ -11,6 +11,7 @@ import "../styles/css/prism-night-owl.css";
 import '../styles/css/ToggleButton.css'
 import "../styles/css/Header.css";
 import "../styles/css/PostListItem.css";
+import "../styles/css/default.css";
 import Footer from '../components/Footer';
 
 import { BodyDiv, GeneralDiv, BodyGen } from '../styles/styledComponents/Global'

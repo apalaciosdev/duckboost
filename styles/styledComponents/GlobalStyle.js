@@ -32,4 +32,5 @@ export const GlobalStyle = createGlobalStyle`
     padding: 16px 20px;
     border-left: 6px solid #137CBD;
   },
+
 `
