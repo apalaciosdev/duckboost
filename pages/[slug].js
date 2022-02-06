@@ -3,12 +3,12 @@ import { MDXRemote } from 'next-mdx-remote'
 import { getFileBySlug, getFiles } from '../lib/mdx'
 
 import MDXComponents from '../components/MDXComponents'
-import { BodyDiv, GeneralDiv, BodyGen } from '../styles/styledComponents/Global'
+
 
 
 export default function Post({ source, frontmatter }) {
   return (
-    <BodyGen>
+    <>
 
         <Head>
           <title>Blog</title>
@@ -16,12 +16,8 @@ export default function Post({ source, frontmatter }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-      <GeneralDiv>
-        <BodyDiv>
           <MDXRemote {...source} components={MDXComponents}/>
-        </BodyDiv>
-      </GeneralDiv>
-    </BodyGen>
+    </>
   )
 }
 

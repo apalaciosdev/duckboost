@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   html,
   body {
     padding: 0;
-    margin: 0px;
+    margin: 10px;
     margin-bottom: 0px;
     margin-top: 40px;
     font-family: Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Oxygen,

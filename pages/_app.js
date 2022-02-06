@@ -13,6 +13,8 @@ import "../styles/css/Header.css";
 import "../styles/css/PostListItem.css";
 import Footer from '../components/Footer';
 
+import { BodyDiv, GeneralDiv, BodyGen } from '../styles/styledComponents/Global'
+
 
 
 
@@ -28,7 +30,16 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={themeMode}>
         <GlobalStyle/>
         <Header theme={theme} toggleTheme={themeToggler}/>
-        <Component {...pageProps} />
+        <BodyGen>
+
+          <GeneralDiv>
+            <BodyDiv>
+              <Component {...pageProps} />
+
+            </BodyDiv>
+          </GeneralDiv>
+        </BodyGen>
+
         <Footer/>
       </ThemeProvider>
 

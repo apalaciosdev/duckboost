@@ -6,6 +6,8 @@ import styled from 'styled-components';
 const FooterDiv = styled.div`
   background-color: #202B33;
   margin-top: 80px;
+  margin-left: -20px;
+  margin-right: -20px;
   color: white;
   padding: 5px;
   border: 5px solid #202B33;

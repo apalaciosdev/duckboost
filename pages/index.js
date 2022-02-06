@@ -1,5 +1,4 @@
-import Head from 'next/head'
-
+import Head from "next/head"
 
 export default function Home() {
   return (
@@ -10,8 +9,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <p>Home Page</p>
+      <h3>Simplifying Web Development</h3>
+      <p>
+        Dedicated to simplifying the web developer experience. BetterStack is a
+        high-quality collection of services, projects and articles for
+        developers
+      </p>
     </div>
   )
 }
-
