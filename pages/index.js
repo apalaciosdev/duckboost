@@ -8,12 +8,20 @@ import styled from 'styled-components';
 
 const SVGDiv = styled.div`
   display:flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  @media (max-width: 540px) {
+    justify-content: center;
+  }
 `
 
 const SVGP = styled.p`
   width: 60%;
-  
-`
+  @media (max-width: 540px) {
+    width: 100%;
+  }
+  `
+
 
 
 
@@ -36,12 +44,8 @@ export default function Home({ posts }) {
         <br />
         <br />
 
-        <Image
-          src={`/images/illustrations/home.svg`}
-          alt="Logo"
-          width={200}
-          height={200}
-        />
+        {/* añadir forma ovalada */}
+        <Image src={"/images/illustrations/home.svg"} alt='Logo' width={200} height={200}/>
       </SVGDiv>
 
       <h1>Lastest Articles</h1>
