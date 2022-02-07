@@ -11,7 +11,7 @@ export const Header = ({theme, toggleTheme}) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 800px)");
+    const mediaQuery = window.matchMedia("(max-width: 1000px)");
     mediaQuery.addListener(handleMediaQueryChange);
     handleMediaQueryChange(mediaQuery);
 

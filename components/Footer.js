@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 
-const FooterDiv = styled.div`
+const FooterDiv = styled.footer`
   background-color: #202B33;
   margin-top: 80px;
   margin-left: -20px;
