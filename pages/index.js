@@ -45,7 +45,7 @@ export default function Home({ posts }) {
         <br />
 
         {/* añadir forma ovalada */}
-        <Image src={"/images/illustrations/home.svg"} alt='Logo' width={200} height={200}/>
+        <Image src={"/images/illustrations/final-rocket.svg"} alt='Logo' width={200} height={200}/>
       </SVGDiv>
 
       <h1>Lastest Articles</h1>
