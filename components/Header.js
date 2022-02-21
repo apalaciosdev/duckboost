@@ -49,7 +49,6 @@ export const Header = ({theme, toggleTheme}) => {
         <nav className="Nav">
           <Link href="/"> Home </Link>
           <Link href="/articles"> Articles </Link>
-          <Link href="/contact"> Contact </Link>
           <span><Toggle theme={theme} toggleTheme={toggleTheme} /></span>
         </nav>
       </CSSTransition>
