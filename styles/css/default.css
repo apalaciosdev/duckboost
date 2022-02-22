@@ -5,3 +5,23 @@ hr{
   margin-top: -10px;
   margin-bottom: 20px;
 }
+
+button{
+  border-radius: 7px;
+  font-size: 20px;
+  cursor: 'pointer';
+  background-color: #137CBD;
+  border: 2px solid #137CBD;
+  color: white;
+  width: 90px;
+  padding: 5px;
+}
+
+input{
+  width: 300px;
+}
+
+button:hover{
+  cursor: pointer
+}
+
