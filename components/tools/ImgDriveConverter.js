@@ -14,8 +14,6 @@ export const ImgDriveConverter = () => {
     if(url !== ''){
       const arr = url.split('/');
       setNewUrl(`https://drive.google.com/uc?export=view&id=${arr[5]}`)
-  
-      console.log(newUrl)
     }
 
   }
@@ -29,7 +27,7 @@ export const ImgDriveConverter = () => {
     <div>
       <br/>
 
-        <label for="productName">
+        <label htmlFor="productName">
           <p>Enter URL: </p>
           <input type="text" name="productName" value={url} onChange={handleInputChange} placeholder='https://drive.google.com/file/d/12HLf2crewvXmzZ66XxNK5tvDFz1Ps3AC/view?usp=sharing'/>
         </label> <br /><br />

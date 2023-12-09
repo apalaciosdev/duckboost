@@ -31,6 +31,12 @@ const StyledDiv = styled.div`
   }
 `
 
+const StyledP = styled.p`
+  width: 7em;
+  padding-left: 10px;
+  text-align: left;
+`
+
 
 
 export const PostListItem = ({ title, date, languaje}) => {
@@ -41,6 +47,8 @@ export const PostListItem = ({ title, date, languaje}) => {
     <StyledDiv theme={theme}>
       <StyledImage src={`/images/icons/${languaje}.png`} alt='Logo' width={40} height={40}/>
       <StyledH3> {title} </StyledH3>
+      <StyledP>{date}</StyledP>
+      
     </StyledDiv>
   );
 };

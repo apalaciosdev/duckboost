@@ -51,7 +51,6 @@ export class ProductsGridComponent {
   }
   
   async deleteProduct(uid: string){
-    console.log("dale")
     this.httpService.deleteProduct(uid).subscribe(
       (response) => { console.log("Product dropped"); },
       (error) => { console.log(error); }
