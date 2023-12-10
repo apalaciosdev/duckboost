@@ -1,14 +1,18 @@
 import Link from "next/link"
 import Head from "next/head"
 
-
+import styled from 'styled-components';
 import { getAllFilesMetadata } from "../lib/mdx"
 import { PostListItem } from "../components/PostListItem"
 
 
+const StyledDiv = styled.div`
+  min-height: 75vh;
+`
+
 export default function Articles({ posts }) {
   return (
-    <div>
+    <StyledDiv>
       <Head>
         <title>Blog</title>
         <meta name="description" content="..." />
@@ -26,7 +30,7 @@ export default function Articles({ posts }) {
           </a>
         </Link>
       ))}
-    </div>
+    </StyledDiv>
   )
 }
 
